@@ -1,5 +1,5 @@
 ### Vue ready components
-Besides giving the existing Bootstrap elements a new look, we added new ones, so that the interface and consistent and homogenous.
+Besides giving the existing Bootstrap elements a new look, we added new ones, so that the interface is consistent and homogenous.
 New components are either UI components or components as Plugins which need some more information than simple props.
 
 Below is the list of new, customized components:
@@ -37,6 +37,41 @@ Below is the list of new, customized components:
 | header        |
 | content       |
 | footer        | 
+
+
+<vuep template="#example"></vuep>
+
+<script v-pre type="text/x-template" id="example">
+<template>
+  <div>
+    <stats-card>
+       <div class="icon-big text-center icon-warning" slot="header">
+         <i class="ti-server"></i>
+       </div>
+       <div class="numbers" slot="content">
+         <p>Capacity</p>
+         105GB
+       </div>
+       <div class="stats" slot="footer">
+         <i class="ti-reload"></i> Updated now
+       </div>
+     </stats-card>
+   </div>
+ 
+</template>
+
+<script>
+  import StatsCard from './statsCard.js'
+  export default {
+    components:{
+     StatsCard
+    },
+    data() {
+      return { name: 'Vue' }
+    }
+  }
+</script>
+</script>
 
 
 ### ChartCard [Demo](https://cristijora.github.io/vue-paper-dashboard/#/admin/overview)

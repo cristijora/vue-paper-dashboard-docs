@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
-  <title>./vue-paper-dashboard-docs</title>
-  <link rel="stylesheet" href="https://unpkg.com/docute@3/dist/docute.css">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    <title>vue-paper-dashboard-docs</title>
+    <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/docsify@4.0.0/themes/vue.css">
+    <link rel="stylesheet" href="https://unpkg.com/vuep/dist/vuep.css">
+    <link rel="stylesheet" href="paper-dashboard.css">
+    <link rel="stylesheet" href="themify-icons.css">
+    <script src="https://unpkg.com/babel-plugin-transform-vue-jsx"></script>
+
 </head>
 <body>
-  <div id="app"></div>
-  <script src="https://unpkg.com/docute@3/dist/docute.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js"></script>
-  <script src="https://unpkg.com/docute-iframe"></script>
-  <script>
-    docute.init({
-        plugins: [
-            docuteIframe()
-        ],
-        toc: `
-- [Getting started](/)
-- [File structure](/filestructure)
-- [Dependencies](/dependencies)
-- [Components](/components)
-`
-    })
-  </script>
+<div id="app"></div>
+<script>
+    window.$docsify = {
+        name: 'vue-paper-dashboard',
+        repo: 'https://github.com/cristijora/vue-paper-dashboard',
+    }
+</script>
+<!-- inject javascript file -->
+<script src="https://unpkg.com/babel-standalone/babel.min.js"></script>
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vuep"></script>
+<script src="https://unpkg.com/docsify"></script>
+
 </body>
 </html>
