@@ -1,22 +1,21 @@
-### Vue ready components
+## Short summary
 Besides giving the existing Bootstrap elements a new look, we added new ones, so that the interface is consistent and homogenous.
 New components are either UI components or components as Plugins which need some more information than simple props.
 
 Below is the list of new, customized components:
 
-- StatsCard
-- ChartCard
+- [StatsCard](/components?id=statscard)
+- [ChartCard](/components?id=chartcard)
 - FormGroupInput
-- PaperTable
-- PaperTable
-- Notification plugin
-- Sidebar plugin
+- [PaperTable](/components?id=papertable)
 
-### StatsCard [Demo](https://cristijora.github.io/vue-paper-dashboard/#/admin/overview)
+## StatsCard 
+#### [Demo](https://cristijora.github.io/vue-paper-dashboard/#/admin/overview)
 
-![alt text](statscard.PNG "Logo Title Text 1")
+![alt text](img/statscard.PNG "Logo Title Text 1")
 
 #### Usage
+Template
 ```vue
 <stats-card>
   <div class="icon-big text-center" class="icon-success" slot="header">
@@ -31,6 +30,15 @@ Below is the list of new, customized components:
   </div>
 </stats-card>
 ```
+Javascript
+```js
+import StatsCard from 'components/UIComponents/Cards/StatsCard.vue'
+export default{
+    components:{
+        StatsCard
+    }
+}
+```
 #### Slots:
 | Name          |
 | ------------- |
@@ -39,10 +47,10 @@ Below is the list of new, customized components:
 | footer        | 
 
 
-### ChartCard [Demo](https://cristijora.github.io/vue-paper-dashboard/#/admin/overview)
+## ChartCard 
 
-![alt text](chartcard.PNG "Logo Title Text 1")
-
+### [Demo](https://cristijora.github.io/vue-paper-dashboard/#/admin/overview)
+![alt text](img/chartcard.PNG "Logo Title Text 1")
 
 #### Usage
 
@@ -62,7 +70,11 @@ Template
 ```
 Javascript
 ```js
+import ChartCard from 'components/UIComponents/Cards/ChartCard.vue'
 export default{
+    components:{
+      ChartCard  
+    },
     data(){
          return {
            chartData: {
@@ -110,3 +122,85 @@ export default{
 | subTitle       |
 | legend        | 
 | footer        | 
+
+
+## PaperTable 
+#### [Demo](https://cristijora.github.io/vue-paper-dashboard/#/admin/table-list)
+
+![alt text](img/table.PNG "Logo Title Text 1")
+
+#### Usage
+
+Template
+```vue
+<paper-table :title="table.title" :sub-title="table.subTitle" :data="table.data" :columns="table.columns">
+</paper-table>
+```
+
+Javascript 
+```js
+import PaperTable from 'components/UIComponents/PaperTable.vue'
+export default {
+    components: {
+      PaperTable
+    },
+    data () {
+      return {
+        table: {
+          title: 'Stripped Table',
+          subTitle: 'Here is a subtitle for this table',
+          columns: ['Id', 'Name', 'Salary', 'Country', 'City'],
+          data: [{
+                id: 1,
+                name: 'Dakota Rice',
+                salary: '$36.738',
+                country: 'Niger',
+                city: 'Oud-Turnhout'
+              },
+              {
+                id: 2,
+                name: 'Minerva Hooper',
+                salary: '$23,789',
+                country: 'Curaçao',
+                city: 'Sinaai-Waas'
+              },
+              {
+                id: 3,
+                name: 'Sage Rodriguez',
+                salary: '$56,142',
+                country: 'Netherlands',
+                city: 'Baileux'
+              },
+              {
+                id: 4,
+                name: 'Philip Chaney',
+                salary: '$38,735',
+                country: 'Korea, South',
+                city: 'Overland Park'
+              },
+              {
+                id: 5,
+                name: 'Doris Greene',
+                salary: '$63,542',
+                country: 'Malawi',
+                city: 'Feldkirchen in Kärnten'
+              }]
+        }
+    }
+  }
+}
+```
+
+#### Props:
+| Name          | Type           | Default value  | Accepted values  |
+| ------------- |:-------------:| ----------------------:| -----:|
+| columns        | Array(string)  |                 | Any array of strings    |
+| data           | Array(objects) | Chart title     | Any array of objects    |
+| type           | String         | Stripped        | striped/hover       |
+| title          | String         | ''              | Any string           | 
+| subTitle       | String         | ''              |Any string           | 
+
+#### Slots:
+| Name          |
+| ------------- |
+| header        |
